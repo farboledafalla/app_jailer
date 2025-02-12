@@ -17,7 +17,7 @@ const Sidebar = () => {
                </li>
                <li className='mb-4'>
                   <Link
-                     to='/cursos'
+                     to='/courses'
                      className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
                   >
                      <BookOpen size={20} /> Cursos
@@ -25,7 +25,7 @@ const Sidebar = () => {
                </li>
                <li className='mb-4'>
                   <Link
-                     to='/usuarios'
+                     to='/users'
                      className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
                   >
                      <Users size={20} /> Usuarios
@@ -33,7 +33,7 @@ const Sidebar = () => {
                </li>
                <li>
                   <Link
-                     to='/configuracion'
+                     to='/settings'
                      className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
                   >
                      <Settings size={20} /> Configuración
