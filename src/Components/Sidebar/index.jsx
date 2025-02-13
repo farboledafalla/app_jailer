@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Home, BookOpen, Users, Settings } from 'lucide-react';
 
-const Sidebar = () => {
+export const Sidebar = () => {
    return (
       <aside className='w-64 bg-gray-800 text-white h-screen p-5'>
          <h2 className='text-xl font-bold mb-6'>Admin Dashboard</h2>
@@ -44,5 +44,3 @@ const Sidebar = () => {
       </aside>
    );
 };
-
-export default Sidebar;
