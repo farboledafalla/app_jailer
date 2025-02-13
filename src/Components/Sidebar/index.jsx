@@ -9,7 +9,7 @@ const Sidebar = () => {
             <ul>
                <li className='mb-4'>
                   <Link
-                     to='/dashboard'
+                     to='/'
                      className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
                   >
                      <Home size={20} /> Inicio
