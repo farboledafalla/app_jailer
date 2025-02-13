@@ -4,7 +4,7 @@ import { Layout } from '../../Components/Layout';
 import StatsCard from '../../Components/StatsCard';
 import CourseList from '../../Components/CourseList';
 
-const Dashboard = () => {
+export const Dashboard_ = () => {
    const cursos = [
       { id: 1, nombre: 'React desde Cero', instructor: 'Juan Pérez' },
       { id: 2, nombre: 'Node.js y Express', instructor: 'María López' },
@@ -28,5 +28,3 @@ const Dashboard = () => {
       </Layout>
    );
 };
-
-export default Dashboard;

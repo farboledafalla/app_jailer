@@ -4,7 +4,7 @@ import { BookOpen, PlusCircle } from 'lucide-react';
 import CourseCard from '../../Components/CourseCard';
 import { Layout } from '../../Components/Layout';
 
-function Courses() {
+export const Courses_ = () => {
    const [courses, setCourses] = useState([]);
 
    useEffect(() => {
@@ -60,6 +60,4 @@ function Courses() {
          </div>
       </Layout>
    );
-}
-
-export default Courses;
+};

@@ -4,7 +4,7 @@ import { Settings as SettingsIcon } from 'lucide-react';
 import { Layout } from '../../Components/Layout';
 import SettingsForm from '../../Components/SettingsForm';
 
-function SettingsPage() {
+export const Settings_ = () => {
    const [config, setConfig] = useState({
       institutionName: 'Academia Online',
       contactEmail: 'soporte@academia.com',
@@ -33,6 +33,4 @@ function SettingsPage() {
          </div>
       </Layout>
    );
-}
-
-export default SettingsPage;
+};

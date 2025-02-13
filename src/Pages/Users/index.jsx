@@ -4,7 +4,7 @@ import { Users, PlusCircle } from 'lucide-react';
 import UserCard from '../../Components/UserCard';
 import { Layout } from '../../Components/Layout';
 
-function UsersPage() {
+export const Users_ = () => {
    const [users, setUsers] = useState([]);
 
    useEffect(() => {
@@ -58,6 +58,4 @@ function UsersPage() {
          </div>{' '}
       </Layout>
    );
-}
-
-export default UsersPage;
+};

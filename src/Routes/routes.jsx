@@ -1,26 +1,27 @@
 import { useRoutes } from 'react-router-dom';
 
-import Dashboard from '../Pages/Dashboard';
-import Courses from '../Pages/Courses';
-import { Settings, Users } from 'lucide-react';
+import { Dashboard_ } from '../Pages/Dashboard';
+import { Courses_ } from '../Pages/Courses';
+import { Users_ } from '../Pages/Users';
+import { Settings_ } from '../Pages/Settings';
 
 export const AppRoutes = () => {
    let routes = useRoutes([
       {
          path: '/',
-         element: <Dashboard />,
+         element: <Dashboard_ />,
       },
       {
          path: '/courses',
-         element: <Courses />,
+         element: <Courses_ />,
       },
       {
          path: '/users',
-         element: <Users />,
+         element: <Users_ />,
       },
       {
          path: '/settings',
-         element: <Settings />,
+         element: <Settings_ />,
       },
    ]);
 
