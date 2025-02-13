@@ -4,6 +4,7 @@ import { Dashboard_ } from '../Pages/Dashboard';
 import { Courses_ } from '../Pages/Courses';
 import { Users_ } from '../Pages/Users';
 import { Settings_ } from '../Pages/Settings';
+import { NotFound_ } from '../Pages/NotFound';
 
 export const AppRoutes = () => {
    let routes = useRoutes([
@@ -22,6 +23,10 @@ export const AppRoutes = () => {
       {
          path: '/settings',
          element: <Settings_ />,
+      },
+      {
+         path: '/*',
+         element: <NotFound_ />,
       },
    ]);
 
