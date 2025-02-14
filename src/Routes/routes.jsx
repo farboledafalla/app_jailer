@@ -7,6 +7,7 @@ import { Settings_ } from '../Pages/Settings';
 import { NotFound_ } from '../Pages/NotFound';
 import { Login_ } from '../Pages/Auth/Login';
 import { Register_ } from '../Pages/Auth/Register';
+import { ForgotPassword_ } from '../Pages/Auth/ForgotPassword';
 
 export const AppRoutes = () => {
    let routes = useRoutes([
@@ -21,6 +22,10 @@ export const AppRoutes = () => {
       {
          path: '/register',
          element: <Register_ />,
+      },
+      {
+         path: '/forgot-password',
+         element: <ForgotPassword_ />,
       },
       {
          path: '/courses',

@@ -34,7 +34,7 @@ export const SidebarAuth = () => {
                </li>
                <li className='mb-4'>
                   <NavLink
-                     to='/forgotten'
+                     to='/forgot-password'
                      className={({ isActive }) =>
                         `${normalStyle} ${isActive ? activeStyle : undefined}`
                      }
