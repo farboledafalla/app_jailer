@@ -1,35 +1,46 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { KeyRound, ScanFace, LockKeyhole } from 'lucide-react';
 
 export const SidebarAuth = () => {
+   //Variables con estilos para rutas activa/inactiva
+   const activeStyle = 'bg-gray-700';
+   const normalStyle =
+      'flex items-center gap-3 p-2 rounded-lg hover:bg-gray-500';
+
    return (
       <aside className='w-64 bg-gray-800 text-white h-screen p-5'>
          <h2 className='text-3xl font-bold mb-6 text-center'>Jailer Classes</h2>
          <nav className='mt-12'>
             <ul>
                <li className='mb-4'>
-                  <Link
+                  <NavLink
                      to='/login'
-                     className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
+                     className={({ isActive }) =>
+                        `${normalStyle} ${isActive ? activeStyle : undefined}`
+                     }
                   >
                      <KeyRound size={20} /> Login
-                  </Link>
+                  </NavLink>
                </li>
                <li className='mb-4'>
-                  <Link
+                  <NavLink
                      to='/register'
-                     className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
+                     className={({ isActive }) =>
+                        `${normalStyle} ${isActive ? activeStyle : undefined}`
+                     }
                   >
                      <ScanFace size={20} /> Register
-                  </Link>
+                  </NavLink>
                </li>
                <li className='mb-4'>
-                  <Link
+                  <NavLink
                      to='/forgotten'
-                     className='flex items-center gap-3 p-2 rounded hover:bg-gray-700'
+                     className={({ isActive }) =>
+                        `${normalStyle} ${isActive ? activeStyle : undefined}`
+                     }
                   >
                      <LockKeyhole size={20} /> Forgotten Password
-                  </Link>
+                  </NavLink>
                </li>
             </ul>
          </nav>
