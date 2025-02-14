@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { Home, BookOpen, Users, Settings } from 'lucide-react';
+import { KeyRound, ScanFace, LockKeyhole } from 'lucide-react';
 
-export const Sidebar = () => {
+export const SidebarAuth = () => {
    //Variables con estilos para rutas activa/inactiva
    const activeStyle = 'bg-gray-700';
    const normalStyle =
@@ -9,47 +9,37 @@ export const Sidebar = () => {
 
    return (
       <aside className='w-64 bg-gray-800 text-white h-screen p-5'>
-         <h2 className='text-xl font-bold mb-6'>Admin Dashboard</h2>
-         <nav>
+         <h2 className='text-3xl font-bold mb-6 text-center'>Jailer Classes</h2>
+         <nav className='mt-12'>
             <ul>
                <li className='mb-4'>
                   <NavLink
-                     to='/'
+                     to='/login'
                      className={({ isActive }) =>
                         `${normalStyle} ${isActive ? activeStyle : undefined}`
                      }
                   >
-                     <Home size={20} /> Inicio
+                     <KeyRound size={20} /> Login
                   </NavLink>
                </li>
                <li className='mb-4'>
                   <NavLink
-                     to='/courses'
+                     to='/register'
                      className={({ isActive }) =>
                         `${normalStyle} ${isActive ? activeStyle : undefined}`
                      }
                   >
-                     <BookOpen size={20} /> Cursos
+                     <ScanFace size={20} /> Register
                   </NavLink>
                </li>
                <li className='mb-4'>
                   <NavLink
-                     to='/users'
+                     to='/forgot-password'
                      className={({ isActive }) =>
                         `${normalStyle} ${isActive ? activeStyle : undefined}`
                      }
                   >
-                     <Users size={20} /> Usuarios
-                  </NavLink>
-               </li>
-               <li>
-                  <NavLink
-                     to='/settings'
-                     className={({ isActive }) =>
-                        `${normalStyle} ${isActive ? activeStyle : undefined}`
-                     }
-                  >
-                     <Settings size={20} /> Configuración
+                     <LockKeyhole size={20} /> Forgotten Password
                   </NavLink>
                </li>
             </ul>

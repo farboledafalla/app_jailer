@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Users, PlusCircle } from 'lucide-react';
 
-import Sidebar from '../../Components/Sidebar';
-import Header from '../../Components/Header';
 import UserCard from '../../Components/UserCard';
+import { Layout } from '../../Components/Layout';
 
-function UsersPage() {
+export const Users_ = () => {
    const [users, setUsers] = useState([]);
 
    useEffect(() => {
@@ -34,35 +33,29 @@ function UsersPage() {
    }, []);
 
    return (
-      <div className='flex'>
-         <Sidebar />
-         <div className='flex-1 p-6 bg-gray-100 min-h-screen'>
-            <Header />
-            <div className='p-6'>
-               {/* Encabezado */}
-               <div className='flex items-center justify-between mb-6'>
-                  <h1 className='text-2xl font-bold flex items-center gap-2'>
-                     <Users className='w-6 h-6 text-blue-500' />
-                     Usuarios
-                  </h1>
-                  <button className='flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition'>
-                     <PlusCircle className='w-5 h-5' />
-                     Agregar Usuario
-                  </button>
-               </div>
+      <Layout>
+         <div className='p-6'>
+            {/* Encabezado */}
+            <div className='flex items-center justify-between mb-6'>
+               <h1 className='text-2xl font-bold flex items-center gap-2'>
+                  <Users className='w-6 h-6 text-blue-500' />
+                  Usuarios
+               </h1>
+               <button className='flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition'>
+                  <PlusCircle className='w-5 h-5' />
+                  Agregar Usuario
+               </button>
+            </div>
 
-               {/* Lista de Usuarios */}
-               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                  {users.length > 0 ? (
-                     users.map((user) => <UserCard key={user.id} user={user} />)
-                  ) : (
-                     <p>No hay usuarios registrados.</p>
-                  )}
-               </div>
-            </div>{' '}
-         </div>
-      </div>
+            {/* Lista de Usuarios */}
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+               {users.length > 0 ? (
+                  users.map((user) => <UserCard key={user.id} user={user} />)
+               ) : (
+                  <p>No hay usuarios registrados.</p>
+               )}
+            </div>
+         </div>{' '}
+      </Layout>
    );
-}
-
-export default UsersPage;
+};
