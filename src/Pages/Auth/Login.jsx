@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import { LayoutAuth } from '../../Components/Layout/LayoutAuth';
 import { useFocusInput } from '../../utils/focusInput';
+import { UserInfo } from '../../Components/Auth/userInfo';
 
 import axios from 'axios';
 
@@ -22,7 +23,7 @@ export const Login_ = () => {
    const handleLogin = async (e) => {
       e.preventDefault();
       try {
-         const response = await axios.post('http://localhost:3001/api/login', {
+         const response = await axios.post('http://localhost:3000/login', {
             username,
             password,
          });
