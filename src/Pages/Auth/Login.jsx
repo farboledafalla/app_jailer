@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import { LayoutAuth } from '../../Components/Layout/LayoutAuth';
 import { useFocusInput } from '../../utils/focusInput';
-import { UserInfo } from '../../Components/Auth/userInfo';
+import { UserInfo } from '../../Components/Auth/UserInfo';
 
 import axios from 'axios';
 
