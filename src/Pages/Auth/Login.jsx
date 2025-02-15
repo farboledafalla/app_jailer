@@ -1,20 +1,23 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { LayoutAuth } from '../../Components/Layout/LayoutAuth';
 import { useFocusInput } from '../../utils/focusInput';
 import { UserInfo } from '../../Components/Auth/UserInfo';
+import { JailerContext } from '../../Context';
 
 import axios from 'axios';
 
 export const Login_ = () => {
+   const context = useContext(JailerContext);
+
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
    const navigate = useNavigate();
-   const location = useLocation();
+   //const location = useLocation();
 
    // Obtiene la ruta desde donde viene, si no existe deja la raiz
-   const from = location.state?.from?.pathname || '/';
+   //const from = location.state?.from?.pathname || '/';
 
    //Referencia al input que tendrá el foco
    const usernameRef = useRef(null);
@@ -27,14 +30,26 @@ export const Login_ = () => {
             username,
             password,
          });
+
+         // Verifica si `response` tiene datos antes de usarlos
+         if (response && response.data) {
+            console.log('Login exitoso', response.data);
+            navigate('/');
+         } else {
+            console.error('Respuesta vacía del servidor');
+         }
+
          localStorage.setItem('token', response.data.token);
          console.log(response.data);
          // context.setLoggedUser(UserInfo());
 
          //Navega a la ruta desde doncde intentó ingresar
-         navigate(from, { replace: true });
+         //navigate(from, { replace: true });
       } catch (error) {
-         console.error('Error en el login: ', error);
+         console.error(
+            'Error en el login: ',
+            error.response?.data || error.message
+         );
          alert(error.response.data.error);
       }
    };
