@@ -2,13 +2,17 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { AppRoutes } from '../../Routes/routes';
 
+import { JailerProvider } from '../../Context';
+
 import './App.css';
 
 function App() {
    return (
-      <BrowserRouter>
-         <AppRoutes />
-      </BrowserRouter>
+      <JailerProvider>
+         <BrowserRouter>
+            <AppRoutes />
+         </BrowserRouter>
+      </JailerProvider>
    );
 }
 
